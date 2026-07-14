@@ -28,6 +28,7 @@ Stop competing on price. Start competing on proof.
 - Deduplicated to 8,806 unique products using ASIN matching for comparison analysis
 
 ## Dashboard
+<img width="1011" height="776" alt="Image" src="https://github.com/user-attachments/assets/a7e43c6b-848a-4b79-989b-1e792d392558" />
 [View the interactive Tableau dashboard here](https://public.tableau.com/app/profile/oyinlayomi.onafuye/viz/AmazonPricingReviewAnalysis/Dashboard1)
 
 ## Limitations
