@@ -29,6 +29,7 @@ Stop competing on price. Start competing on proof.
 
 ## Dashboard
 [View the interactive Tableau dashboard here](https://public.tableau.com/app/profile/oyinlayomi.onafuye/viz/AmazonPricingReviewAnalysis/Dashboard1)
+<img width="1011" height="776" alt="Image" src="https://github.com/user-attachments/assets/0d6fb1ca-8ee1-4082-9232-18e5101f2fa2" />
 
 ## Limitations
 - Descriptive analysis only, no formal statistical significance testing
