@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/northpeak-logo.png" alt="NorthPeak Marketplace Growth Strategy Analysis" width="100%">
+</p>
+
 # NorthPeak Marketplace Growth Strategy Analysis
 
 **Business Analyst | Consumer Insights | Python and Tableau**
