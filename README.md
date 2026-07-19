@@ -8,13 +8,13 @@
 
 ## Business Context
 
-NorthPeak is a **fictional business scenario** created for this portfolio case study. The analysis uses a public Amazon electronics marketplace dataset as a competitive-intelligence source; it does not contain internal NorthPeak data.
+NorthPeak Consumer Products is a global consumer products company that designs and distributes home, kitchen, and lifestyle products through major retail partners and online marketplaces across North America.
 
-In the scenario, NorthPeak is preparing its annual marketplace growth strategy and must decide whether to prioritize competitive pricing or initiatives that strengthen visible marketplace credibility.
+To support marketplace growth, the Consumer Insights team analyzed publicly available Amazon marketplace data to evaluate customer engagement patterns, pricing dynamics, and competitive positioning across product categories. The goal is to identify where marketplace investments are most likely to improve long-term business performance.
 
-### Business Decision
+## Business Decision
 
-Should NorthPeak compete through lower prices, or invest in initiatives that strengthen customer engagement while preserving long-term profitability?
+Should NorthPeak prioritize price-based competition, or invest in initiatives that strengthen customer engagement while preserving long-term profitability?
 
 ---
 
@@ -149,7 +149,7 @@ The data does not establish a universal review threshold or prove that raising p
 
 ## Data and Method
 
-**Source:** Public Amazon electronics marketplace dataset.
+**Data Source:** This analysis uses a publicly available Amazon electronics marketplace dataset as a proxy for competitive marketplace intelligence. Results are intended to demonstrate an analytical approach rather than represent proprietary NorthPeak business data.
 
 **Raw data:** 42,675 listing observations collected from August 21–30, 2025.
 
