@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/northpeak-logo.png" alt="NorthPeak Marketplace Growth Strategy Analysis" width="100%">
+  <img src="northpeak-logo.png" alt="NorthPeak Logo" width="100%">
 </p>
 
 # NorthPeak Marketplace Growth Strategy Analysis
