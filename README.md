@@ -10,7 +10,7 @@
 
 NorthPeak Consumer Products is a global consumer products company that designs and distributes home, kitchen, and lifestyle products through major retail partners and online marketplaces across North America.
 
-To support marketplace growth, the Consumer Insights team analyzed publicly available Amazon marketplace data to evaluate customer engagement patterns, pricing dynamics, and competitive positioning across product categories. The goal is to identify where marketplace investments are most likely to improve long-term business performance.
+To support marketplace growth, the Consumer Insights team analyzed publicly available Amazon electronics marketplace data to evaluate customer engagement patterns, pricing dynamics, and competitive positioning across product categories. The goal is to identify where marketplace investments are most likely to improve long-term business performance.
 
 ## Business Decision
 
@@ -32,7 +32,7 @@ Customer engagement differs much more sharply. Products below $25 average 13,703
 
 Products with more reviews also **tend to have slightly higher ratings**. This is a descriptive association: review volume may reflect product age, brand awareness, category, availability, and other factors not captured in the dataset.
 
-**Portfolio recommendation:** NorthPeak should not assume that permanent price cuts will improve customer ratings. It should test compliant review-generation and purchase-activation initiatives while monitoring conversion, margin, review velocity, and customer experience.
+**Recommendation:** NorthPeak should not assume that permanent price cuts will improve customer ratings. It should test compliant review-generation and purchase-activation initiatives while monitoring conversion, margin, review velocity, and customer experience.
 
 | Metric | Finding |
 |---|---:|
@@ -149,7 +149,7 @@ The data does not establish a universal review threshold or prove that raising p
 
 ## Data and Method
 
-**Data Source:** This analysis uses a publicly available Amazon electronics marketplace dataset as a proxy for competitive marketplace intelligence. Results are intended to demonstrate an analytical approach rather than represent proprietary NorthPeak business data.
+**Data Source:** This analysis uses a publicly available Amazon electronics marketplace dataset as a source of competitive marketplace intelligence. The dataset is used to demonstrate how publicly available marketplace data can support pricing, customer engagement, and marketplace growth decisions.
 
 **Raw data:** 42,675 listing observations collected from August 21–30, 2025.
 
