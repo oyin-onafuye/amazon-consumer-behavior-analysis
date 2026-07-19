@@ -1,150 +1,236 @@
 # NorthPeak Marketplace Growth Strategy Analysis
 
-**Business Analyst | Consumer Insights Team**
-**Reporting to: Director of Digital Commerce**
+**Business Analyst | Consumer Insights | Python and Tableau**
+
+[View the interactive Tableau dashboard](https://public.tableau.com/app/profile/oyinlayomi.onafuye/viz/AmazonPricingReviewAnalysis/Dashboard1)
 
 ---
 
 ## Business Context
 
-NorthPeak is a global consumer products company that designs innovative home, kitchen, and lifestyle products for modern households. The company distributes its portfolio through major retail partners and online marketplaces across North America, serving millions of customers each year.
+NorthPeak is a **fictional business scenario** created for this portfolio case study. The analysis uses a public Amazon electronics marketplace dataset as a competitive-intelligence source; it does not contain internal NorthPeak data.
 
-As NorthPeak prepared its annual marketplace growth strategy, leadership faced a critical investment decision: should future marketplace resources prioritize competitive pricing or customer trust initiatives to strengthen marketplace performance?
+In the scenario, NorthPeak is preparing its annual marketplace growth strategy and must decide whether to prioritize competitive pricing or initiatives that strengthen visible marketplace credibility.
 
-To support this decision, the Consumer Insights team analyzed 42,675 publicly available Amazon product listings across 15 product categories. Amazon was used as a competitive intelligence source to understand how pricing and social proof influence consumer behavior on digital marketplaces.
+### Business Decision
 
-**Business Problem:** How should NorthPeak allocate future marketplace investments to improve marketplace performance?
+Should NorthPeak compete through lower prices, or invest in initiatives that strengthen customer engagement while preserving long-term profitability?
 
 ---
 
 ## Executive Summary
 
-The central finding of this analysis challenges a widely held assumption in marketplace strategy: price does not drive consumer trust or ratings. Social proof does.
+NorthPeak wanted to understand whether lower prices are associated with stronger marketplace performance.
 
-Across 42,675 Amazon product observations spanning 15 categories, average ratings remain virtually flat regardless of price. Only 0.15 stars separate the cheapest from the most expensive products. Yet budget products average 13,703 reviews compared to just 464 for premium products, a 30x gap in visible consumer engagement.
+Analysis of **42,675 Amazon marketplace observations**, consolidated into **8,806 product records**, found that lower-priced products generated substantially more customer engagement, while average customer ratings remained relatively similar across price tiers.
 
-Products with more reviews consistently earn higher ratings. Budget products also average 3,264 monthly purchases compared to 251 for premium products, a 13x difference in current buying velocity.
+These findings suggest NorthPeak should test customer-engagement initiatives before relying on broad, permanent price reductions.
 
-The data points to a clear strategic direction: NorthPeak should not compete primarily on price. The higher-return investment is building the review volume and purchase engagement that signals marketplace credibility to future buyers.
+Ratings vary little across the five standardized price tiers. Products priced below $25 average 4.53 stars, while products priced from $500 to $1,999 average 4.38 stars. Across all five tiers, including the smaller $2,000+ segment, the rating range is approximately 0.16 stars.
+
+Customer engagement differs much more sharply. Products below $25 average 13,703 reviews, compared with 464 for the $500–1,999 tier—**approximately 30x, or 29.5x, more reviews**. Recent-purchase badges show a similar descriptive pattern: 3,264 average monthly purchases for products below $25 versus 251 for the $500–1,999 tier.
+
+Products with more reviews also **tend to have slightly higher ratings**. This is a descriptive association: review volume may reflect product age, brand awareness, category, availability, and other factors not captured in the dataset.
+
+**Portfolio recommendation:** NorthPeak should not assume that permanent price cuts will improve customer ratings. It should test compliant review-generation and purchase-activation initiatives while monitoring conversion, margin, review velocity, and customer experience.
 
 | Metric | Finding |
-|---|---|
-| Total product observations analyzed | 42,675 |
-| Average review gap: budget vs premium | 30x (13,703 vs 464 reviews) |
-| Average rating spread across all price tiers | 0.15 stars |
-| Monthly purchase gap: budget vs premium | 13x (3,264 vs 251 purchases) |
-| Categories where pattern holds | 13 of 15 |ion](https://github.com/oyin-onafuye/amazon-consumer-behavior-analysis)
+|---|---:|
+| Raw marketplace observations | 42,675 |
+| Deduplicated product records | 8,806 |
+| Categories | 15 |
+| Average review difference: `<$25` vs. `$500–1,999` | 29.5x |
+| Rating range across five price tiers | Approximately 0.16 stars |
+| Recent-purchase difference: `<$25` vs. `$500–1,999` | Approximately 13x |
+
+---
+
+## Executive Dashboard
+
+![NorthPeak marketplace strategy dashboard](Dashboard%201.png)
+
+The dashboard distinguishes three related but different concepts:
+
+- **Ratings** are observed customer scores.
+- **Trust** is an interpretation that may be influenced by visible ratings and reviews but is not directly measured.
+- **Customer engagement** is represented by review volume and Amazon recent-purchase badges.
+
 ---
 
 ## Insights Deep Dive
 
-### Section 1: Pricing Strategy
-**Does lower price improve marketplace performance?**
+### 1. Pricing and Ratings
 
-Across six price tiers from $0 to $2,000+, average product ratings stay virtually flat. The $0-25 tier averages 4.53 stars. The $500-1,999 tier averages 4.38 stars. The total spread is just 0.15 stars, smaller than a single rating increment on Amazon's five-star scale.
+**Question:** Are higher-priced products rated materially better?
 
-Price is not making products look better in the eyes of consumers. A $10 product and a $1,500 product are rated nearly identically. The assumption that premium pricing signals premium quality does not hold in this data.
+No meaningful rating difference appears across the standardized price tiers:
 
-**Implication for NorthPeak:** Price cuts are unlikely to improve consumer perception of quality. Brands investing in discounting to signal value are solving the wrong problem.
+| Price tier | Products | Average rating | Average reviews |
+|---|---:|---:|---:|
+| `<$25` | 1,940 | 4.53 | 13,703 |
+| `$25–99` | 2,856 | 4.46 | 5,964 |
+| `$100–499` | 2,812 | 4.38 | 2,223 |
+| `$500–1,999` | 673 | 4.38 | 464 |
+| `$2,000+` | 101 | 4.51 | 177 |
 
----
+![Price-tier review and rating comparison](Price%20vs%20Volume%20Quality.png)
 
-### Section 2: Customer Trust
-**Does social proof have a stronger relationship with marketplace performance than price?**
+**Business interpretation:** Price is not a strong indicator of the rating a listing receives. This does not mean price is unimportant to conversion, revenue, or margin—those measures are not included in the dataset.
 
-While rating stays flat across price tiers, review volume tells a completely different story. Products in the $0-25 tier average 13,703 total reviews. Products in the $500-1,999 tier average just 464. Every price tier has fewer reviews than the one below it without exception.
+### 2. Review Volume and Ratings
 
-Monthly purchase data confirms this is not a historical artifact. Products under $25 average 3,264 purchases per month compared to 251 for premium products, a 13x difference in current buying velocity.
+**Question:** Is review volume associated with customer ratings?
 
-When products are grouped by review count, a consistent upward trend emerges in ratings. Products with fewer than 100 reviews average 4.34 stars. Products with over 100,000 reviews average 4.60 stars. Review volume is the real driver of marketplace performance.
+Products in higher review tiers tend to have slightly higher average ratings. The difference between the lowest and highest review tiers is approximately 0.26 stars, but the product-level relationship is weak and should not be interpreted as causal.
 
-**Implication for NorthPeak:** Review count is a compounding competitive asset. A product with 13,000 reviews signals credibility to every new potential buyer. A product with 464 reviews, regardless of quality, sends a much weaker signal. Investing in review volume generation is a higher-return strategy than investing in price cuts.
+![Average rating by review tier](Review%20Tier%20vs%20Avg%20Rating.png)
 
----
+**Business interpretation:** Review volume is associated with customer engagement and may contribute to inferred credibility, but the analysis does not establish that reviews cause higher ratings or purchases.
 
-### Section 3: Category Analysis
-**Do these relationships differ across product categories?**
+### 3. Category Context
 
-The pattern holds across 13 of 15 product categories. Two categories break the pattern in a meaningful way: Storage and Smart Home. Storage averages 21,295 reviews, the highest of any category, despite a moderate average price. Smart Home maintains strong review volume at 9,256 average reviews.
+Average review volume varies substantially across electronics categories. Storage, Chargers & Cables, and Power & Batteries have the highest category averages in this snapshot. This ranking describes category context; it does not identify causal exceptions to the overall price relationship.
 
-Both are high-consideration categories where consumers do extensive research before buying. Storage products are purchased with specific technical requirements. Smart Home devices require ecosystem compatibility decisions. In both cases, consumers rely more heavily on review volume as a trust signal precisely because the purchase decision is more complex.
+![Average review volume by category](Category.png)
 
-**Implication for NorthPeak:** In categories where consumers have more at stake, they lean harder on social proof, not price.
+**Business interpretation:** Category conditions should be considered before applying one marketplace strategy across the entire portfolio. A category-level average alone does not explain why a category has more reviews.
 
----
+### 4. Marketplace Strategy
 
-### Section 4: Marketplace Strategy
-**Where should NorthPeak focus future marketplace investments?**
+The findings support a focused testing agenda:
 
-The data points to a two-phase marketplace positioning strategy.
+1. Avoid using permanent discounting as a way to improve customer ratings.
+2. Test compliant post-purchase communication, sampling, and customer-experience initiatives intended to encourage authentic reviews.
+3. Track review velocity and purchase activity alongside conversion, advertising spend, margin, and return rates.
+4. Evaluate results by category rather than assuming the same relationship everywhere.
 
-**Phase 1: Seed volume.** In new or underpenetrated categories, price aggressively to drive initial purchase velocity. The goal is not to be permanently cheap. The goal is to accumulate enough reviews quickly that the product gains algorithmic visibility and social proof credibility. A product with 10,000 reviews at $19.99 is significantly harder to displace than a product with 200 reviews at $14.99, regardless of which one is objectively better.
+The data does not establish a universal review threshold or prove that raising prices after accumulating reviews will preserve demand.
 
-**Phase 2: Move to margin.** Once review credibility is established, approximately 1,000+ reviews as a baseline threshold, move toward premium positioning. The review count remains visible to future buyers as the price increases, and the higher rating that correlates with higher review count supports the premium price story.
 ---
 
 ## Recommendations
 
-### Pricing Team
-Avoid competing solely on price in mature categories where ratings remain consistent across price tiers. Price reductions in these categories are unlikely to improve consumer perception and will erode margin without a corresponding return in marketplace credibility.
+### Recommendation 1: Prioritize customer-engagement tests before broad price reductions
 
-In new category launches, use introductory pricing strategically to seed purchase volume, not as a long-term positioning tool.
+**Action:** Test compliant customer-experience and post-purchase initiatives before committing to permanent price reductions.
 
-### Marketing Team
-Increase investment in verified review generation initiatives. Post-purchase follow-up sequences, sampling programs, and loyalty-driven review campaigns will generate higher long-term marketplace returns than promotional discounting.
+**Evidence:** Lower-priced products show substantially higher review and recent-purchase activity, while ratings remain relatively similar across price tiers.
 
-Focus messaging on social proof signals: review count, purchase volume badges, and community engagement, rather than price-led communications.
+**Decision benefit:** NorthPeak can evaluate engagement outcomes without making an immediate, long-term margin commitment.
 
-### Marketplace Team
-Develop category-specific marketplace strategies rather than a one-size-fits-all pricing approach. Storage and Smart Home categories demonstrate that in high-consideration segments, social proof investments are even more critical than average.
+### Recommendation 2: Evaluate performance and strategy by category
 
-Monitor review velocity as a leading performance indicator alongside traditional metrics like revenue and conversion rate.
+**Action:** Review price, rating, review volume, and recent-purchase activity within each product category.
 
-### Consumer Insights Team
-Establish a quarterly review of marketplace performance data tracking review count growth, pricing tier distribution, and rating trends by category. This will allow NorthPeak to identify early signals of competitive displacement before they show up in revenue metrics.
+**Evidence:** Average review volume varies substantially across the 15 electronics categories in the dataset.
+
+**Decision benefit:** NorthPeak can avoid applying one pricing or engagement strategy across categories with different customer behaviors.
+
+### Recommendation 3: Track customer engagement alongside commercial outcomes
+
+**Action:** Monitor review velocity and recent-purchase activity alongside conversion, margin, advertising spend, and returns.
+
+**Evidence:** The public marketplace dataset describes customer engagement but does not include NorthPeak’s internal commercial outcomes.
+
+**Decision benefit:** NorthPeak can assess whether engagement gains translate into profitable business performance.
 
 ---
 
 ## Expected Business Impact
 
-| Recommendation | Expected Outcome |
+| Recommendation | Expected decision benefit |
 |---|---|
-| Shift from price-led to review-led marketplace investment | More sustainable long-term marketplace performance without permanent margin sacrifice |
-| Post-purchase review generation programs | Compounding improvement in marketplace credibility and algorithmic visibility |
-| Category-specific pricing strategy | Higher return on marketplace investment in high-consideration categories |
-| Quarterly review velocity tracking | Earlier identification of competitive threats and marketplace performance shifts |
+| Test review- and experience-led initiatives | Evaluate marketplace credibility without committing to permanent margin reduction |
+| Use pricing selectively | Preserve flexibility while measuring conversion and profitability |
+| Review performance by category | Avoid applying a single strategy to materially different markets |
+| Track review velocity with commercial KPIs | Connect customer engagement to business outcomes |
 
 ---
 
-## Data Overview
+## Data and Method
 
-**Dataset:** 42,675 Amazon product observations across 15 electronics categories, collected over a 9-day scrape window.
+**Source:** Public Amazon electronics marketplace dataset.
 
-**Deduplication:** Products identified using ASIN (Amazon's unique product identifier). 8,806 unique products used for price-tier comparison analysis.
+**Raw data:** 42,675 listing observations collected from August 21–30, 2025.
 
-**Tools:** SQL (SQLite) for price-tier breakdowns and review-rating correlation. Python (Pandas) for data cleaning, handling scraping artifacts, and ASIN-based deduplication. Tableau Public for dashboard visualization.
+**Final data:** 8,806 deduplicated product records across 15 categories.
+
+**Deduplication:** The latest observation was retained for each extractable ASIN. Listings without a usable ASIN used title, rating, and review count as a fallback, followed by a final cross-group title check.
+
+**Standardized price tiers:**
+
+- `<$25`
+- `$25–99`
+- `$100–499`
+- `$500–1,999`
+- `$2,000+`
+
+**Tools:** Python and pandas for cleaning and analysis, and Tableau for interactive visualization.
 
 ---
 
 ## Limitations
 
-- Amazon marketplace data was used as a proxy for marketplace performance. Internal NorthPeak metrics such as conversion rate, advertising spend, and profit margins were unavailable and would strengthen the analysis.
-- Dataset covers electronics categories only. Findings should be treated as directional insights for NorthPeak's home, kitchen, and lifestyle categories, where purchase dynamics may differ.
-- This is a descriptive analysis. Correlation between review count and rating is identified, not causation.
-- Average rather than median was used for price and review aggregations. Both distributions are right-skewed, so median would be a more robust measure in a follow-on analysis.
-- Approximately 17% of rows had scraping artifacts in the purchased_last_month field and were treated as missing values.
-- Snapshot data only. Does not capture price or review changes over time.
+- Findings are **descriptive associations and do not establish causation**.
+- Amazon listings are used as a proxy for marketplace conditions; internal conversion, revenue, margin, advertising, and return data were unavailable.
+- Ratings are observed, trust is inferred, and review and recent-purchase volume represent customer engagement.
+- The dataset covers electronics; findings may not transfer directly to home, kitchen, or lifestyle products.
+- Review, price, and purchase distributions are right-skewed, so averages can be influenced by high-volume products.
+- Recent-purchase badges are threshold-style marketplace labels rather than exact transaction records.
+- Approximately 17% of raw rows contained non-null scraping artifacts in the purchase field and were treated as missing during parsing.
+- The data is a snapshot and does not track product performance or pricing changes over time.
 
 ---
 
-## Dashboard
+## Repository
 
-[View Interactive Dashboard on Tableau Public](https://public.tableau.com/app/profile/oyinlayomi.onafuye/viz/AmazonPricingReviewAnalysis/Dashboard1)
+```text
+.
+├── README.md
+├── amazon_products_sales_data_uncleaned.csv
+├── amazon_FINAL.csv
+├── amazon_project.py
+├── marketplace_analysis.py
+├── TABLEAU_PUBLIC_CHECKLIST.md
+├── chart_data/
+│   ├── category_summary.csv
+│   ├── price_tier_summary.csv
+│   └── review_tier_summary.csv
+├── Dashboard 1.png
+├── Price vs Volume Quality.png
+├── Review Tier vs Avg Rating.png
+├── Category.png
+├── .gitignore
+```
+
+### Run locally
+
+From the repository root:
+
+```bash
+python amazon_project.py
+python marketplace_analysis.py
+```
+
+`amazon_project.py` reports the raw-to-final cleaning audit without overwriting the curated dataset. `marketplace_analysis.py` reproduces the summary tables and static portfolio visuals from `amazon_FINAL.csv`.
 
 ---
 
-## Files
+## Key Takeaways
 
-- sql_queries/ — SQL queries used for price-tier breakdowns and review-rating correlation
-- data_cleaning.py — Python cleaning and deduplication script
-- amazon_FINAL.csv — Final cleaned dataset (8,806 unique products)
+- Lower-priced products show substantially higher review and recent-purchase activity.
+- Average customer ratings remain relatively similar across price tiers.
+- Products with more reviews tend to have slightly higher ratings, although the relationship is weak and descriptive.
+- NorthPeak should test customer-engagement initiatives while protecting margin and measuring commercial outcomes.
+
+---
+
+## Skills Demonstrated
+
+- Translating a marketplace question into measurable analytical comparisons
+- Cleaning malformed scraped data with Python and Pandas
+- Deduplicating repeated product observations with ASINs
+- Aggregating product data for business analysis
+- Building an executive Tableau dashboard
+- Distinguishing measured outcomes from business interpretation
+- Communicating findings, limitations, and recommended next steps
