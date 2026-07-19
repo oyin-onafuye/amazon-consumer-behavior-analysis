@@ -8,7 +8,7 @@
 
 ## Business Context
 
-NorthPeak Consumer Products is a global consumer products company that designs and distributes home, kitchen, and lifestyle products through major retail partners and online marketplaces across North America.
+NorthPeak is a global consumer products company that designs and distributes home, kitchen, and lifestyle products through major retail partners and online marketplaces across North America.
 
 To support marketplace growth, the Consumer Insights team analyzed publicly available Amazon electronics marketplace data to evaluate customer engagement patterns, pricing dynamics, and competitive positioning across product categories. The goal is to identify where marketplace investments are most likely to improve long-term business performance.
 
